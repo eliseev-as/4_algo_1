@@ -14,8 +14,8 @@ int main() {
         int v1, v2, w;
         cin >> v1 >> v2 >> w;
         // добавляем ребро в список смежности
-        adj_list[v1].push_back({v2, w});
-        adj_list[v2].push_back({v1, w});
+        adj_list[v1].emplace_back(v2, w);
+        adj_list[v2].emplace_back(v1, w);
         // добавляем ребро в матрицу смежности
         adj_matrix[v1][v2] = w;
         adj_matrix[v2][v1] = w;
@@ -37,5 +37,7 @@ int main() {
         }
         cout << endl;
     }
+
+    return 0;
 }
 
